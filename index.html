@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cafés de France</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f3ee;
+            color: #2d211b;
+        }
+
+        header {
+            background: #4b2e22;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin: 0 0 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .search {
+            max-width: 700px;
+            margin: -25px auto 30px;
+            padding: 0 20px;
+        }
+
+        .search-box {
+            display: flex;
+            background: white;
+            border-radius: 12px;
+            padding: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .search input {
+            flex: 1;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search button {
+            border: none;
+            background: #8b5e3c;
+            color: white;
+            padding: 0 22px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .intro h2 {
+            font-size: 30px;
+        }
+
+        .map {
+            height: 450px;
+            background: #ddd;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .cafes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .cafe {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .cafe h3 {
+            margin-top: 0;
+        }
+
+        .location {
+            color: #8b5e3c;
+        }
+
+        footer {
+            margin-top: 50px;
+            background: #4b2e22;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>☕ Cafés de France</h1>
+        <p>Trouvez facilement un café près de chez vous</p>
+    </header>
+
+    <div class="search">
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Rechercher une ville ou un café..."
+            >
+            <button onclick="searchCafe()">Rechercher</button>
+        </div>
+    </div>
+
+    <main class="container">
+
+        <section class="intro">
+            <h2>Les cafés près de vous</h2>
+            <p>
+                Découvrez les cafés, coffee shops et établissements
+                de France.
+            </p>
+        </section>
+
+        <div class="map">
+            🗺️ La carte arrivera ici
+        </div>
+
+        <section class="cafes">
+
+            <div class="cafe">
+                <h3>☕ Café Exemple</h3>
+                <p class="location">📍 Paris</p>
+                <p>Café chaleureux au cœur de Paris.</p>
+            </div>
+
+            <div class="cafe">
+                <h3>☕ Le Petit Café</h3>
+                <p class="location">📍 Bordeaux</p>
+                <p>Café indépendant avec terrasse.</p>
+            </div>
+
+            <div class="cafe">
+                <h3>☕ Café des Amis</h3>
+                <p class="location">📍 Lyon</p>
+                <p>Un café convivial dans le centre-ville.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Cafés de France — Projet gratuit et accessible à tous</p>
+    </footer>
+
+    <script>
+        function searchCafe() {
+            const search = document.getElementById("searchInput").value;
+
+            if (search.trim() === "") {
+                alert("Veuillez entrer une ville ou un café.");
+            } else {
+                alert("Recherche : " + search);
+            }
+        }
+    </script>
+
+</body>
+</html>
